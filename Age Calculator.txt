@@ -1,0 +1,282 @@
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.Cursor;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JFrame;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
+public class AgeCalculator extends JFrame {
+    private ImageIcon icon;
+
+private Container c;
+private JLabel l,x,d1,m1,y1,d2,m2,y2;
+private Font f;
+private JTextField da1,mo1,ye1,da2,mo2,ye2;
+private JButton result;
+private Cursor cursor,r;
+    AgeCalculator()
+    {
+        
+        this.setSize(530,300);
+        this.setTitle("Age Calculator");
+        this.setResizable(false); 
+        initcomponents();
+    }
+    public void initcomponents()
+    {
+        c=this.getContentPane();
+        c.setLayout(null);
+        c.setBackground(Color.DARK_GRAY);
+        
+        
+        f=new Font("Lucida Sans",Font.BOLD,16);
+        cursor = new Cursor(Cursor.TEXT_CURSOR);
+        r = new Cursor (Cursor.HAND_CURSOR);
+        
+        l = new JLabel();
+        l.setBounds(1,10,165,20);
+        l.setText("Enter Today's Date: ");
+        l.setFont(f);
+        l.setForeground(Color.green);
+        l.setOpaque(true);
+        l.setBackground(Color.BLACK);
+        l.setToolTipText("DD/MM/YYYY");
+        c.add(l);
+        
+   
+        
+        d1 = new JLabel();
+        d1.setText("DAY");
+        d1.setBounds(177,10,40,20);
+        d1.setFont(f);
+        d1.setForeground(Color.green);
+        d1.setOpaque(true);
+        d1.setBackground(Color.BLACK);
+        d1.setToolTipText("Enter Day");
+        c.add(d1);
+        
+        
+        
+        da1 = new JTextField();
+        da1.setBounds(220,10,50,20);
+        da1.setForeground(Color.BLACK);
+        da1.setBackground(Color.green);
+        da1.setFont(f);
+        da1.setCursor(cursor);
+        c.add(da1);
+        
+        da1.addActionListener(new ActionListener(){
+        
+        
+        public void actionPerformed (ActionEvent e)
+        {
+            String s = da1.getText();
+            if(s.isEmpty())
+            {
+                JOptionPane.showMessageDialog(null,"Please enter Day");
+            }
+        }
+        });
+        
+        m1 = new JLabel();
+        m1.setBounds(280,10,70,20);
+        m1.setText("MONTH");
+        m1.setFont(f);
+        m1.setForeground(Color.green);
+        m1.setOpaque(true);
+        m1.setBackground(Color.BLACK);
+        m1.setToolTipText("Enter Month");
+        c.add(m1);
+        
+        
+        mo1 = new JTextField();
+        mo1.setBounds(353,10,50,20);
+        mo1.setForeground(Color.BLACK);
+        mo1.setBackground(Color.green);
+        mo1.setFont(f);
+        mo1.setCursor(cursor);
+        c.add(mo1);
+        
+        mo1.addActionListener(new ActionListener(){
+        
+        
+        public void actionPerformed (ActionEvent e)
+        {
+            String s = mo1.getText();
+            if(s.isEmpty())
+            {
+                JOptionPane.showMessageDialog(null,"Please enter Month");
+            }
+        }
+        });
+        
+        
+        y1 = new JLabel();
+        y1.setBounds(415,10,50,20);
+        y1.setText("YEAR");
+        y1.setFont(f);
+        y1.setForeground(Color.green);
+        y1.setOpaque(true);
+        y1.setBackground(Color.BLACK);
+        y1.setToolTipText("Enter Year");
+        c.add(y1);
+        
+        ye1 = new JTextField();
+        ye1.setBounds(468,10,50,20);
+        ye1.setForeground(Color.BLACK);
+        ye1.setBackground(Color.green);
+        ye1.setFont(f);
+        ye1.setCursor(cursor);
+        c.add(ye1);
+        
+        ye1.addActionListener(new ActionListener(){
+        
+        
+        public void actionPerformed (ActionEvent e)
+        {
+            String s = ye1.getText();
+            if(s.isEmpty())
+            {
+                JOptionPane.showMessageDialog(null,"Please enter Year");
+            }
+        }
+        });
+        
+        
+        x = new JLabel();
+        x.setText("Enter Birth Date: ");
+        x.setBounds(1,70,165,20);
+        x.setFont(f);
+        x.setForeground(Color.green);
+        x.setOpaque(true);
+        x.setBackground(Color.BLACK);
+        x.setToolTipText("DD/MM/YYYY");
+        c.add(x);
+        
+        
+        d2 = new JLabel();
+        d2.setText("DAY");
+        d2.setBounds(177,70,40,20);
+        d2.setFont(f);
+        d2.setForeground(Color.green);
+        d2.setOpaque(true);
+        d2.setBackground(Color.BLACK);
+        d2.setToolTipText("Enter Day");
+        c.add(d2);
+        
+        
+        da2 = new JTextField();
+        da2.setBounds(220,70,50,20);
+        da2.setForeground(Color.BLACK);
+        da2.setBackground(Color.green);
+        da2.setFont(f);
+        da2.setCursor(cursor);
+        c.add(da2);
+        
+        da2.addActionListener(new ActionListener(){
+        
+        
+        public void actionPerformed (ActionEvent e)
+        {
+            String s = da2.getText();
+            if(s.isEmpty())
+            {
+                JOptionPane.showMessageDialog(null,"Please enter Day");
+            }
+        }
+        });
+        
+        m2 = new JLabel();
+        m2.setBounds(280,70,70,20);
+        m2.setText("MONTH");
+        m2.setFont(f);
+        m2.setForeground(Color.green);
+        m2.setOpaque(true);
+        m2.setBackground(Color.BLACK);
+        m2.setToolTipText("Enter Month");
+        c.add(m2);
+        
+        mo2 = new JTextField();
+        mo2.setBounds(353,70,50,20);
+        mo2.setForeground(Color.BLACK);
+        mo2.setBackground(Color.green);
+        mo2.setFont(f);
+        mo2.setCursor(cursor);
+        c.add(mo2);
+        
+        
+        mo2.addActionListener(new ActionListener(){
+        
+        
+        public void actionPerformed (ActionEvent e)
+        {
+            String s = mo2.getText();
+            if(s.isEmpty())
+            {
+                JOptionPane.showMessageDialog(null,"Please enter Month");
+            }
+        }
+        });
+        
+        
+        y2 = new JLabel();
+        y2.setBounds(415,70,50,20);
+        y2.setText("YEAR");
+        y2.setFont(f);
+        y2.setForeground(Color.green);
+        y2.setOpaque(true);
+        y2.setBackground(Color.BLACK);
+        y2.setToolTipText("Enter Year");
+        c.add(y2);
+        
+        ye2 = new JTextField();
+        ye2.setBounds(468,70,50,20);
+        ye2.setForeground(Color.BLACK);
+        ye2.setBackground(Color.green);
+        ye2.setFont(f);
+        ye2.setCursor(cursor);
+        c.add(ye2);
+        
+        ye2.addActionListener(new ActionListener(){
+        
+        
+        public void actionPerformed (ActionEvent e)
+        {
+            String s = ye2.getText();
+            if(s.isEmpty())
+            {
+                JOptionPane.showMessageDialog(null,"Please enter Year");
+            }
+        }
+        });
+        
+        
+        result = new JButton("Calculate");
+        result.setBounds(200,110,120,30);
+        result.setFont(f);
+        result.setForeground(Color.cyan);
+        result.setBackground(Color.BLACK);
+        result.setCursor(r);
+        c.add(result);
+        
+        icon = new ImageIcon(getClass().getResource("image_small.png"));
+        this.setIconImage(icon.getImage());
+        
+        
+    
+}
+    public static void main(String[] args) {
+        AgeCalculator fra = new AgeCalculator();
+        fra.setVisible(true);
+        fra.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        fra.setLocationRelativeTo(null);
+        
+    }
+}
+    
